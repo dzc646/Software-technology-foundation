@@ -8,7 +8,7 @@ void main()
 {
 	char  c, x;
 	int i = 0, inword = 0,ture=1;
-	char filename[10];
+	string filename;
 	int line = 0;
 	int word = 0;
 	int character = 0;
@@ -18,15 +18,16 @@ void main()
 	{
 		
 		cin >> x;
-		if (x != 'w' & x != 'c' & x != 's')
+		if (x != 'w' & x != 'c' & x != 's' & x!='l')
 			{
 				cout << "输入出错！！！\n请从新输入...\n" << endl;
 				continue;
 			}
-		//cin >> filename;
+		cin >> filename;
+		
 		cout << "开始读取文件..." << endl;
 		ifstream ifile;
-		ifile.open("wc.txt", ios::in);
+		ifile.open(filename, ios::in);
 		if (!ifile)
 			{
 				cerr << "Open File Fail.\n请重新输入..." << endl;
